@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<framework:BaseStateAwareContentPage 
+    x:Class="TailwindTraders.Mobile.CartPage"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:framework="clr-namespace:TailwindTraders.Mobile.Framework"
+    xmlns:xfbindablestacklayout="clr-namespace:XFBindableStackLayout"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:TailwindTraders.Mobile"    
+    ios:Page.UseSafeArea="true"    
+    x:DataType="local:ShoppingCartViewModel"
+    x:TypeArguments="local:ShoppingCartViewModel, local:ShoppingCartViewModel.State"
+    Title="{Binding Title}">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>                        
+            <Style
+                BasedOn="{StaticResource ShadowfullBoxViewStyle}"
+                TargetType="BoxView" />
+                                   
+            <Thickness x:Key="ButtonMargin"
+                Left="40"
+                Top="{StaticResource DefaultMargin}"
+                Right="40" />
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+           
+    <ContentPage.Content>
+        <StackLayout>
+                       
+            <Button x:Name="purchaseButton"
+                Margin="{StaticResource ButtonMargin}"
+                Command="{Binding PurchaseItemsCommand}"
+                Style="{StaticResource Accent2ColorButtonStyle}"
+                Text="PURCHASE" />
+                            
+            <Label
+              Style="{StaticResource HeaderLabelStyle}"
+              Text="CURRENT CART CONTENTS">
+
+              <Label.Margin>
+                <Thickness
+                  Left="{StaticResource 2xDefaultMargin}"
+                  Top="{StaticResource DefaultMargin}"
+                  Right="{StaticResource 2xDefaultMargin}"
+                  Bottom="{StaticResource 2xDefaultMargin}" />
+              </Label.Margin>
+
+            </Label>
+            
+            <ScrollView>
+              
+                <xfbindablestacklayout:BindableStackLayout                    
+                    ItemsSource="{Binding ItemsInCart}"
+                    Spacing="{StaticResource DefaultMargin}">
+                    <View.Margin>
+                        <Thickness Bottom="{StaticResource 4xDefaultMargin}" />
+                    </View.Margin>
+                    <View.ItemTemplate>
+                        <DataTemplate>
+                            <local:CartItemView />
+                        </DataTemplate>
+                    </View.ItemTemplate>
+                </xfbindablestacklayout:BindableStackLayout>                                             
+                
+                
+            </ScrollView>
+            
+            <Button x:Name="continueShoppingButton"
+                Margin="{StaticResource ButtonMargin}"
+                Command="{Binding ContinueShoppingCommand}"
+                Style="{StaticResource AccentColorButtonStyle}"
+                Text="CONTINUE SHOPPING" />
+            
+            
+            <Label x:Name="infoLabel"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                IsVisible="false"
+                Text="Sorry, there are no products to show."
+                VerticalOptions="Center">
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup Name="States">
+
+                    <VisualState Name="EverythingOK">
+                      <VisualState.Setters>
+                        <Setter Property="IsVisible" Value="false" />
+                      </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState Name="Error">
+                      <VisualState.Setters>
+                        <Setter Property="IsVisible" Value="false" />
+                      </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState Name="Empty">
+                      <VisualState.Setters>
+                        <Setter Property="IsVisible" Value="true" />
+                      </VisualState.Setters>
+                    </VisualState>
+
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+              </Label>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</framework:BaseStateAwareContentPage>

@@ -1,0 +1,16 @@
+In Windows 10:
+
+labelImg -> https://github.com/tzutalin/labelImg/files/2638199/windows_v1.8.1.zip
+Python -> https://www.python.org/ftp/python/3.7.2/python-3.7.2-amd64.exe
+
+pip install tensorflow
+pip install pandas
+pip install Pillow
+
+Create csv/label_map.csv with the following content:
+class_text,class_label
+hardhat,1 
+
+python xml_to_csv.py
+python generate_tfrecord.py
+
