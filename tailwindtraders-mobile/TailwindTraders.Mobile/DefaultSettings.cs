@@ -14,7 +14,7 @@ namespace TailwindTraders.Mobile.Features.Settings
 
         public const string AppCenterAndroidSecret = "** ANDROID APP CENTER SECRET HERE **";
 
-        public const string AppCenteriOSSecret = "** IOS APP CENTER SECRET HERE **";
+        public const string AppCenteriOSSecret = "dfa7ebd6-23a1-43e2-9fe0-c3129e7f16b9";
 
         public const bool UseFakeAPIs = false;
 

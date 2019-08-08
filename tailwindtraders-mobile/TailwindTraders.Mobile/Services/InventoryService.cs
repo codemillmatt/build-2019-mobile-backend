@@ -18,8 +18,9 @@ namespace TailwindTraders.Mobile
         IInventoryWebAPI webApi;
 
         
-        string url = "** YOUR INVENTORY URL HERE - up through the api route portion - refit in IInventoryWebAPI appends the rest **";
-        // string url = "http://localhost:5000/api";
+        //string url = "** YOUR INVENTORY URL HERE - up through the api route portion - refit in IInventoryWebAPI appends the rest **";
+        //string url = "http://localhost:5000/api";
+        string url = "https://bema-inventory.azurewebsites.net/api";
 
         public InventoryService()
         {

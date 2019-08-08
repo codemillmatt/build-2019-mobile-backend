@@ -23,8 +23,9 @@ namespace TailwindTraders.Mobile
         readonly IConnectivityService connectivityService;
         readonly IShoppingCartAPI webApi;
 
-        string url = "** YOUR SHOPPING CART URL HERE - up through the api route portion - refit in IShoppingCartAPI appends the rest **";
+        //string url = "** YOUR SHOPPING CART URL HERE - up through the api route portion - refit in IShoppingCartAPI appends the rest **";
         //readonly string shoppingCartApiUrl = "http://localhost:9000/api";
+        readonly string shoppingCartApiUrl = "https://bema-shoppingcart.azurewebsites.net/api";
 
         readonly string cartItemsForUserKey = "cartItems";
 

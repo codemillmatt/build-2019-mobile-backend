@@ -22,6 +22,7 @@ namespace TailwindTraders.Mobile
 
         string url = "** YOUR PRODUCT URL HERE - up through the api route portion - refit in IProductsWebAPI appends the rest **";
         // readonly string productsBaseUrl = "http://localhost:8000/api";
+        readonly string productsBaseUrl = "https://bemaproduct.azurewebsites.net/api";
 
         public ProductService()
         {
