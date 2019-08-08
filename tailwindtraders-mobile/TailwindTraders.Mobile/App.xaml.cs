@@ -113,14 +113,16 @@ namespace TailwindTraders.Mobile
                 DependencyService.Register<RestPoolService>();
             }
 
-            if (DefaultSettings.UseFakeAuthentication)
-            {
-                DependencyService.Register<FakeAuthenticationService>();
-            }
-            else
-            {
-                DependencyService.Register<AuthenticationService>();
-            }
+            DependencyService.Register<FakeAuthenticationService>();
+
+            //if (DefaultSettings.UseFakeAuthentication)
+            //{
+            //    DependencyService.Register<FakeAuthenticationService>();
+            //}
+            //else
+            //{
+            //    DependencyService.Register<AuthenticationService>();
+            //}
         }
 #pragma warning restore CS0162 
 

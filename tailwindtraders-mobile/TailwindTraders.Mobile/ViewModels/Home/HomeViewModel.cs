@@ -14,6 +14,7 @@ using Xamarin.Forms;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using TailwindTraders.Mobile.Features.Settings;
+using Microsoft.AppCenter.Crashes;
 
 namespace TailwindTraders.Mobile.Features.Home
 {
@@ -68,19 +69,26 @@ namespace TailwindTraders.Mobile.Features.Home
 
         public override async Task InitializeAsync()
         {
-            await base.InitializeAsync();
-
-            await AuthenticationService.RefreshSessionAsync();
-
-            if (IsNoOneLoggedIn)
+            try
             {
-                await App.NavigateModallyToAsync(new LogInPage());
-                IsBusy = false;
+                await base.InitializeAsync();
+
+                await AuthenticationService.RefreshSessionAsync();
+
+                if (IsNoOneLoggedIn)
+                {
+                    await App.NavigateModallyToAsync(new LogInPage());
+                    IsBusy = false;
+                }
+                else
+                {
+                    await LoadDataAsync();
+                    IsBusy = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                await LoadDataAsync();
-                IsBusy = false;
+                Crashes.TrackError(ex);
             }
 
             //TODO: this goes away

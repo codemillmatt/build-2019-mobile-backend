@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace TailwindTraders.Mobile.Features.LogIn
 {
@@ -11,12 +12,12 @@ namespace TailwindTraders.Mobile.Features.LogIn
 
         public async Task<string> GetUserName()
         {
-            return (await Xamarin.Essentials.SecureStorage.GetAsync("username")).ToLower();
+            return (await SecureStorage.GetAsync("username")).ToLower();
         }
 
         public async Task LogInAsync(string email, string password)
         {
-            await Xamarin.Essentials.SecureStorage.SetAsync("username", email.ToLower());
+            await SecureStorage.SetAsync("username", email.ToLower());
 
             IsAnyOneLoggedIn = true;
         }
@@ -34,8 +35,8 @@ namespace TailwindTraders.Mobile.Features.LogIn
         }
 
         public async Task RefreshSessionAsync()
-        {
-            var userName = await Xamarin.Essentials.SecureStorage.GetAsync("username");
+        {           
+            var userName = await SecureStorage.GetAsync("username");
 
             IsAnyOneLoggedIn = !string.IsNullOrEmpty(userName);
         }
