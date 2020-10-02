@@ -10,7 +10,7 @@ You're gonna need some Azure to get this repo up and running - so why not sign u
 
 First, clone this repo. Download it as a zip. Just get it locally. Then...
 
-Next there is a deploy folder. It contains an [ARM template](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates?WT.mc_id=build2019-github-masoucou) and a Bash script with [Azure CLI commands](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) that will deploy everything and setup the environment variables in Azure for you.
+Next there is a deploy folder. It contains an [ARM template](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates?WT.mc_id=build2019-github-masoucou) and a Bash script with [Azure CLI commands](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&WT.mc_id=build2019mobilebackend-github-masoucou) that will deploy everything and setup the environment variables in Azure for you.
 
 ## Running the Demos
 
