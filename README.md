@@ -4,13 +4,13 @@ Choosing the backend architecture for your mobile app can be daunting. Do you go
 
 ## Get Some Azure
 
-You're gonna need some Azure to get this repo up and running - so why not sign up for a [free account](https://azure.microsoft.com/free/?WT.mc_id=build2019-github-masoucou)? 12 months of free services, plus $200 in free credit. More than enough to get you rolling.
+You're gonna need some Azure to get this repo up and running - so why not sign up for a [free account](https://azure.microsoft.com/free/?WT.mc_id=mobile-0000-masoucou)? 12 months of free services, plus $200 in free credit. More than enough to get you rolling.
 
 ## Deploying The Demos
 
 First, clone this repo. Download it as a zip. Just get it locally. Then...
 
-Next there is a deploy folder. It contains an [ARM template](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates?WT.mc_id=build2019-github-masoucou) and a Bash script with [Azure CLI commands](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) that will deploy everything and setup the environment variables in Azure for you.
+Next there is a deploy folder. It contains an [ARM template](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates?WT.mc_id=mobile-0000-masoucou) and a Bash script with [Azure CLI commands](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&WT.mc_id=mobile-0000-masoucou) that will deploy everything and setup the environment variables in Azure for you.
 
 ## Running the Demos
 
@@ -28,7 +28,7 @@ The microservices are then broken down into 3 parts as well.
 1. Inventory - ASP.NET (or C# Azure Function) with SQL Server
 1. Shopping cart - ASP.NET (or C# Azure Function) with MongoDB
 
-During the talk, you learned about the trade-offs between building a mobile backend in a "pure web api" format using [containers](https://docs.microsoft.com/azure/app-service/containers/quickstart-dotnetcore?WT.mc_id=build2019-github-masoucou) and [Azure App Services](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet?WT.mc_id=build2019-github-masoucou). Using an event driven [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview?WT.mc_id=build2019-github-masoucou) approach. Or going with a Mobile Backend as a Service (MBaaS) such as [Visual Studio App Center](https://docs.microsoft.com/appcenter/?WT.mc_id=build2019-github-masoucou).
+During the talk, you learned about the trade-offs between building a mobile backend in a "pure web api" format using [containers](https://docs.microsoft.com/azure/app-service/containers/quickstart-dotnetcore?WT.mc_id=mobile-0000-masoucou) and [Azure App Services](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet?WT.mc_id=mobile-0000-masoucou). Using an event driven [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview?WT.mc_id=mobile-0000-masoucou) approach. Or going with a Mobile Backend as a Service (MBaaS) such as [Visual Studio App Center](https://docs.microsoft.com/appcenter/?WT.mc_id=mobile-0000-masoucou).
 
 Everything will already be running in Azure if you ran the setup script. If you did not, you can run everything locally. Check out this video on how to get it setup.
 
@@ -38,9 +38,9 @@ Everything will already be running in Azure if you ran the setup script. If you 
 
 There were several miscellaneous services demonstrated that applied to any mobile backend. These are _not_ included in the setup scripts. But they aren't that difficult to setup and will be included in the video below.
 
-The first service is [Azure Front Door](https://docs.microsoft.com/azure/frontdoor/front-door-overview?WT.mc_id=build2019-github-masoucou). Front Door allows you to manage and define global routing of your web application traffic. This means you can route requests to their nearest backend.
+The first service is [Azure Front Door](https://docs.microsoft.com/azure/frontdoor/front-door-overview?WT.mc_id=mobile-0000-masoucou). Front Door allows you to manage and define global routing of your web application traffic. This means you can route requests to their nearest backend.
 
-The second was [Azure Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview?WT.mc_id=build2019-github-masoucou) and [Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-overview?WT.mc_id=build2019-github-masoucou). Blog storage is a cost efficient was to store static, binary data. While a CDN will cache it and bring it to the edge.
+The second was [Azure Blob Storage](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview?WT.mc_id=mobile-0000-masoucou) and [Azure CDN](https://docs.microsoft.com/azure/cdn/cdn-overview?WT.mc_id=mobile-0000-masoucou). Blog storage is a cost efficient was to store static, binary data. While a CDN will cache it and bring it to the edge.
 
 ## Developing Backends For Mobile Apps Talk Summary
 
